@@ -13,4 +13,8 @@ class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     fun bind(number: Int){
         text.text = "$number"
     }
+
+    fun setBackground(color: Int) {
+        image.setBackgroundColor(color)
+    }
 }
