@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         fab = findViewById(R.id.fab)
         fab.setOnClickListener {
             adapter.addItems(adapter.itemCount + 1)
+            recyclerView.scrollToPosition(adapter.itemCount - 1);
         }
 
         adapter.setItems(listOf())
