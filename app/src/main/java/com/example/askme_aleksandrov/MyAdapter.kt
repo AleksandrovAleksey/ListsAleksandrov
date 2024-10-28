@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 private val items = ArrayList<Int>()
+private var itemCounter:Int = 0
 
 class MyAdapter() : RecyclerView.Adapter<MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -34,7 +35,8 @@ class MyAdapter() : RecyclerView.Adapter<MyViewHolder>() {
 
     fun addItems(item: Int) {
         items.add(item)
-        notifyDataSetChanged()
+        itemCounter += 1
+        notifyItemRangeInserted(itemCounter, items.size)
     }
 
 
